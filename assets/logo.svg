@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 160" role="img" aria-label="M. Walker monogram">
+  <!-- Recreation of the M. Walker monogram for dark backgrounds:
+       parchment letterforms, brass dot. Swap this file for the original
+       artwork (light-background version) wherever a light theme is used. -->
+  <text x="22" y="106" font-family="Didot, 'Bodoni MT', Georgia, 'Times New Roman', serif" font-size="118" fill="#ece3d2">M</text>
+  <text x="98" y="148" font-family="Didot, 'Bodoni MT', Georgia, 'Times New Roman', serif" font-size="100" fill="#ece3d2">W</text>
+  <circle cx="87" cy="128" r="9" fill="#c9a24b"/>
+</svg>
