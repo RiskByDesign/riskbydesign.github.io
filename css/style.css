@@ -543,6 +543,16 @@ section[id] { scroll-margin-top: 90px; }
 .post-body li { margin-bottom: 0.4em; }
 .post-body a { text-decoration: underline; text-underline-offset: 3px; }
 
+.post-figure {
+  margin: 2.2em 0;
+}
+.post-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-out);
+}
+
 .post-list { display: grid; gap: 24px; }
 
 .post-card { color: var(--text); }
