@@ -20,7 +20,7 @@ The header shows `assets/MW_BR.PNG` cropped to the monogram inside a white round
 
 1. **Email**: contact card uses `cyber@2600.host`.
 2. **LinkedIn**: links to `linkedin.com/in/michael-w-b8b551159`.
-3. **GitHub repo links**: cards link to `github.com/RiskByDesign/forlas-crq` and `github.com/RiskByDesign/calibration-trainer`. Confirm those are the public repo paths after the handle rename.
+3. **GitHub repo links**: cards link to `github.com/RiskByDesign/forlas-crq` and `github.com/RiskByDesign/Calibrated_Course`. Both verified live.
 
 ## Adding sales later
 
