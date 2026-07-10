@@ -337,8 +337,16 @@ section[id] { scroll-margin-top: 90px; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
+}
+
+.card-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  margin: 18px 0 4px;
+  box-shadow: var(--shadow-out);
 }
 
 .card {
