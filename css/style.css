@@ -514,6 +514,51 @@ section[id] { scroll-margin-top: 90px; }
   word-break: break-all;
 }
 
+/* ---------- writing / blog ---------- */
+
+.post-title { font-size: clamp(2rem, 4.5vw, 3rem); }
+
+.post-meta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2.2em;
+}
+
+.post-lede {
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.post-body p { color: var(--muted); font-size: 1.02rem; }
+.post-body .post-lede { color: var(--text); }
+.post-body h2 {
+  color: var(--text);
+  font-size: 1.4rem;
+  margin: 2em 0 0.6em;
+}
+.post-body ul { color: var(--muted); padding-left: 1.3em; margin: 0 0 1em; }
+.post-body li { margin-bottom: 0.4em; }
+.post-body a { text-decoration: underline; text-underline-offset: 3px; }
+
+.post-list { display: grid; gap: 24px; }
+
+.post-card { color: var(--text); }
+.post-card:hover { text-decoration: none; }
+.post-card .post-meta { margin-bottom: 0.8em; }
+.post-card h2 { font-size: 1.35rem; margin-bottom: 0.4em; }
+
+.post-readmore {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {
