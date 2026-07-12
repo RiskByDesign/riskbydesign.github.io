@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lab: products and tools | M. Walker</title>
+  <meta name="description" content="From the Lab: detailed look at the products under development and released. FORLAS CRQ, Calibrated Course, and BowCRQ. Local-first cyber risk and security tooling.">
+  <link rel="canonical" href="https://2600.host/lab/">
+  <meta name="theme-color" content="#212428">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://2600.host/lab/">
+  <meta property="og:site_name" content="M. Walker">
+  <meta property="og:title" content="The Lab: products and tools">
+  <meta property="og:description" content="A detailed look at the products in the workshop: FORLAS CRQ, Calibrated Course, and BowCRQ. Local-first cyber risk and security tooling.">
+  <meta property="og:image" content="https://2600.host/assets/forlas-portfolio-dashboard.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Lab: products and tools">
+  <meta name="twitter:description" content="A detailed look at the products in the workshop: FORLAS CRQ, Calibrated Course, and BowCRQ.">
+  <meta name="twitter:image" content="https://2600.host/assets/forlas-portfolio-dashboard.png">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "FORLAS CRQ",
+        "url": "https://2600.host/lab/#forlas-crq",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Windows",
+        "softwareVersion": "0.2.0",
+        "description": "A local-first quantitative cyber risk platform built on the FAIR methodology: Monte Carlo simulation, sensitivity analysis, tolerance measurement, portfolio aggregation, and boardroom-ready reporting, fully offline.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "Michael Walker", "url": "https://2600.host/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Calibrated Course",
+        "url": "https://2600.host/lab/#calibrated-course",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any (runs offline in a browser)",
+        "description": "Self-contained, offline HTML tools that train calibrated probability estimation: a practice trainer with Brier scoring plus a nine-module course.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "Michael Walker", "url": "https://2600.host/" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "BowCRQ",
+        "url": "https://2600.host/lab/#bowcrq",
+        "applicationCategory": "SecurityApplication",
+        "description": "A local-first desktop application for quantified Bow Tie risk analysis with Cyber Risk Quantification. In development.",
+        "author": { "@type": "Person", "name": "Michael Walker", "url": "https://2600.host/" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#lab">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/assets/MW_BR.PNG" alt=""></span>
+        <span class="brand-name">M<span class="gold">.</span> Walker</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/lab/">The Lab</a></li>
+          <li><a href="/blog/">Writing</a></li>
+          <li><a class="nav-contact" href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="lab">
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow reveal">From the Lab</p>
+        <h1 class="reveal">Products and tools</h1>
+        <p class="section-lede reveal">
+          The workshop behind RiskByDesign. Some of this is released and in your hands
+          today; some is still on the bench. Everything here follows the same rules:
+          local-first, offline, no cloud, no telemetry. Here is the detail the front
+          page doesn't have room for.
+        </p>
+      </div>
+    </section>
+
+    <div class="container container-narrow">
+
+      <!-- ============ FORLAS CRQ ============ -->
+      <section id="forlas-crq" class="lab-product">
+        <div class="lab-head">
+          <h2>FORLAS CRQ</h2>
+          <div class="badges">
+            <span class="badge badge-accent">Flagship</span>
+            <span class="badge">Beta &middot; v0.2.0</span>
+          </div>
+        </div>
+        <p class="lab-lede">
+          A local-first quantitative cyber risk platform built on the FAIR methodology.
+          It turns loss scenarios into defensible numbers a board can act on, and it does
+          it entirely on your own machine.
+        </p>
+
+        <figure class="lab-figure">
+          <a href="/assets/forlas-portfolio-dashboard.png" target="_blank" rel="noopener">
+            <img src="/assets/forlas-portfolio-dashboard.png"
+                 alt="FORLAS CRQ portfolio dashboard showing a A$16.1M portfolio ALE, tail metrics, a ranked top loss drivers table, and a portfolio loss exceedance curve"
+                 loading="lazy">
+          </a>
+        </figure>
+
+        <div class="lab-features">
+          <div class="lab-feature">
+            <h3>Monte Carlo simulation</h3>
+            <p>Every scenario is run 100,000 times to produce a full loss distribution and an exceedance curve, with reproducible seeds.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Sensitivity analysis</h3>
+            <p>Rank the FAIR inputs by how much they drive the result, so effort goes to the estimates that actually change the answer.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Tolerance measurement</h3>
+            <p>Probability of breach, utilisation, headroom, and a within-tolerance verdict, all measured against the risk appetite you set.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Portfolio aggregation</h3>
+            <p>Combine every scenario into one organisation-wide loss picture, ranked by contribution, with a portfolio exceedance curve.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Analysis &amp; Evidence</h3>
+            <p>Capture the reasoning beside each number: narrative, confidence, data relied upon, assumptions, gaps, and a rationale per input.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Executive reporting</h3>
+            <p>PDF and Word reports with FORLAS-branded covers, written for boards and auditors, generated straight from your scenarios.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Governance built in</h3>
+            <p>Role-based access, an audit log, review scheduling, and segregation of duties on approvals. On by default.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Yours, and offline</h3>
+            <p>One desktop application, one SQLite database file that you own. No cloud, no accounts, no telemetry, no external services.</p>
+          </div>
+        </div>
+
+        <ul class="tags" aria-label="Technology">
+          <li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>Tauri</li><li>SQLite</li>
+        </ul>
+
+        <div class="lab-actions">
+          <a class="btn btn-primary" href="https://github.com/RiskByDesign/forlas-crq" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-ghost" href="https://github.com/RiskByDesign/forlas-crq/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+          <span class="price-note">Free and open source</span>
+          <!-- SALES SLOT: when a paid edition ships, add a checkout button here and note pricing. -->
+        </div>
+        <p class="lab-readmore">
+          Read more: <a href="/blog/inside-forlas-crq.html">a full tour of FORLAS CRQ</a>,
+          <a href="/blog/cyber-risk-language-problem.html">why cyber risk needs numbers</a>,
+          and <a href="/blog/forlas-crq-v0-2-0.html">what shipped in v0.2.0</a>.
+        </p>
+      </section>
+
+      <!-- ============ CALIBRATED COURSE ============ -->
+      <section id="calibrated-course" class="lab-product">
+        <div class="lab-head">
+          <h2>Calibrated Course</h2>
+          <div class="badges">
+            <span class="badge">Open source</span>
+          </div>
+        </div>
+        <p class="lab-lede">
+          A quantitative model is only as good as the humans feeding it. Calibrated Course
+          trains subject matter experts to give probability estimates that match their real
+          accuracy, before their inputs ever reach a risk model.
+        </p>
+
+        <div class="lab-features">
+          <div class="lab-feature">
+            <h3>Practice trainer</h3>
+            <p>90% confidence-interval rounds and true/false rounds with immediate feedback, hit-rate tracking, and Brier scoring.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Live calibration curve</h3>
+            <p>An SVG calibration curve shows, at a glance, where stated confidence is drifting from measured accuracy.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Nine-module course</h3>
+            <p>A self-paced course that teaches the method, verifies your practice rounds, and issues a printable completion certificate.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Verified question bank</h3>
+            <p>240 general-knowledge questions with a published answer key, so the training data can be independently checked.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Runs from disk</h3>
+            <p>Single HTML files with all CSS and JavaScript inline. No build step, no CDN, no network calls. Works on a locked-down laptop.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Nothing leaves the browser</h3>
+            <p>Profiles and progress live in local storage, with JSON and CSV export for backup. No telemetry, no accounts.</p>
+          </div>
+        </div>
+
+        <ul class="tags" aria-label="Technology">
+          <li>Vanilla JS</li><li>Single-file HTML</li><li>Offline</li>
+        </ul>
+
+        <div class="lab-actions">
+          <a class="btn btn-primary" href="https://github.com/RiskByDesign/Calibrated_Course" target="_blank" rel="noopener">View on GitHub</a>
+          <span class="price-note">Free and open source</span>
+        </div>
+        <p class="lab-readmore">
+          Read more: <a href="/blog/cyber-risk-language-problem.html">why calibrated humans matter to a risk model</a>.
+        </p>
+      </section>
+
+      <!-- ============ BOWCRQ ============ -->
+      <section id="bowcrq" class="lab-product">
+        <div class="lab-head">
+          <img class="lab-logo" src="/assets/bowcrq-icon.png" alt="">
+          <h2>BowCRQ</h2>
+          <div class="badges">
+            <span class="badge badge-accent">In development</span>
+          </div>
+        </div>
+        <p class="lab-lede">
+          On the bench. BowCRQ is a local-first desktop application for quantified Bow Tie
+          risk analysis with Cyber Risk Quantification, pairing the clarity of a bow tie
+          diagram with data-backed numbers on both sides of the knot.
+        </p>
+
+        <div class="lab-features">
+          <div class="lab-feature">
+            <h3>Bow tie, quantified</h3>
+            <p>Threats, the top event, and consequences laid out visually, with quantified likelihood and loss driving the picture.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>Local-first and offline-first</h3>
+            <p>The same foundations as the rest of the Lab: everything runs on your machine, with nothing sent anywhere.</p>
+          </div>
+          <div class="lab-feature">
+            <h3>No external dependencies</h3>
+            <p>No cloud, no SaaS, no telemetry, no external services, no API dependencies. Built to work in isolation.</p>
+          </div>
+        </div>
+
+        <div class="lab-actions">
+          <a class="btn btn-primary" href="mailto:cyber@2600.host?subject=BowCRQ%20early%20access">Register interest</a>
+          <span class="price-note">In development. Watch this space.</span>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-cta">
+          <a class="btn btn-ghost" href="/#contact">Questions or feedback? Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Michael Walker. All rights reserved.</p>
+      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
