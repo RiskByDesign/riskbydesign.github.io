@@ -668,11 +668,11 @@ section[id] { scroll-margin-top: 90px; }
 .lab-head h2 { margin: 0; font-size: 1.8rem; }
 .lab-head .badges { margin-left: auto; }
 .lab-logo {
-  width: 104px;
-  height: 104px;
-  border-radius: 18px;
+  width: 128px;
+  height: 128px;
+  border-radius: 20px;
   background: #f3f0e9;
-  padding: 12px;
+  padding: 14px;
   object-fit: contain;
   box-shadow: var(--shadow-out);
   flex-shrink: 0;
