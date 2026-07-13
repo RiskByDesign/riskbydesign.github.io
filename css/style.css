@@ -342,10 +342,13 @@ section[id] { scroll-margin-top: 90px; }
 }
 
 .card-logo {
-  width: 88px;
-  height: 88px;
-  border-radius: 20px;
+  width: 112px;
+  height: 112px;
+  border-radius: 18px;
   margin: 18px 0 4px;
+  background: #fff;
+  padding: 12px;
+  object-fit: contain;
   box-shadow: var(--shadow-out);
 }
 
@@ -657,9 +660,12 @@ section[id] { scroll-margin-top: 90px; }
 .lab-head h2 { margin: 0; font-size: 1.8rem; }
 .lab-head .badges { margin-left: auto; }
 .lab-logo {
-  width: 56px;
-  height: 56px;
+  width: 66px;
+  height: 66px;
   border-radius: 14px;
+  background: #fff;
+  padding: 8px;
+  object-fit: contain;
   box-shadow: var(--shadow-out);
   flex-shrink: 0;
 }
