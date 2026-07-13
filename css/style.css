@@ -347,12 +347,17 @@ section[id] { scroll-margin-top: 90px; }
   max-width: 84%;
   height: auto;
   aspect-ratio: 1 / 1;
-  margin: 22px 0 18px;
+  margin: 6px 0 14px;
   background: #f3f0e9;
   border-radius: 18px;
   padding: 20px;
   object-fit: contain;
   box-shadow: var(--shadow-out);
+}
+
+.card-badges {
+  align-self: center;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -663,11 +668,11 @@ section[id] { scroll-margin-top: 90px; }
 .lab-head h2 { margin: 0; font-size: 1.8rem; }
 .lab-head .badges { margin-left: auto; }
 .lab-logo {
-  width: 72px;
-  height: 72px;
-  border-radius: 14px;
+  width: 104px;
+  height: 104px;
+  border-radius: 18px;
   background: #f3f0e9;
-  padding: 9px;
+  padding: 12px;
   object-fit: contain;
   box-shadow: var(--shadow-out);
   flex-shrink: 0;
