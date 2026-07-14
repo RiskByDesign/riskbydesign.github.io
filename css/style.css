@@ -135,14 +135,14 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   display: inline-flex;
   align-items: center;
   background: #f3f0e9;
-  padding: 8px 13px;
-  border-radius: 12px;
+  padding: 6px 14px;
+  border-radius: 14px;
   box-shadow: var(--shadow-out);
   flex-shrink: 0;
 }
 .brand-logo {
   display: block;
-  height: 42px;
+  height: 64px;
   width: auto;
 }
 
