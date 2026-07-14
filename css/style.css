@@ -131,11 +131,19 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .brand:hover { text-decoration: none; }
 
+.brand-plate {
+  display: inline-flex;
+  align-items: center;
+  background: #f3f0e9;
+  padding: 8px 13px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-out);
+  flex-shrink: 0;
+}
 .brand-logo {
   display: block;
-  height: 62px;
+  height: 42px;
   width: auto;
-  flex-shrink: 0;
 }
 
 .nav-menu {
