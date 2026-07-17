@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Third-party notices | BowCRQ | RiskByDesign</title>
+  <meta name="description" content="Third-party components bundled in BowCRQ, with licence summaries.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://riskbydesign.net/bowcrq/third-party-notices/">
+  <meta name="theme-color" content="#212428">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#doc">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/lab/">The Lab</a></li>
+          <li><a href="/blog/">Writing</a></li>
+          <li><a class="nav-contact" href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article id="doc" class="section post">
+      <div class="container container-narrow">
+        <p class="eyebrow reveal"><a href="/bowcrq/">BowCRQ documents</a></p>
+        <h1 class="post-title reveal">Third-party notices</h1>
+
+        <div class="post-body reveal">
+          <p>BowCRQ bundles the following third-party components. All are permissively licensed (MIT, Apache-2.0, BSD, ISC, OFL or public domain) and are distributed with the application. This list covers the principal dependencies; see each project for full licence text.</p>
+
+          <h2>Fonts</h2>
+
+          <ul><li><strong>Inter</strong> (SIL Open Font License 1.1) — bundled locally as the default UI typeface. The proprietary Aptos font is NOT bundled; it is used only if it is already installed on the operating system.</li></ul>
+
+          <h2>Frontend (JavaScript / TypeScript)</h2>
+
+          <div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>Component</th><th>Licence</th></tr></thead><tbody><tr><td>React, React DOM</td><td>MIT</td></tr><tr><td>@xyflow/react (React Flow)</td><td>MIT</td></tr><tr><td>Zustand</td><td>MIT</td></tr><tr><td>zundo</td><td>MIT</td></tr><tr><td>ECharts, echarts-for-react</td><td>Apache-2.0</td></tr><tr><td>Tailwind CSS, tailwindcss-animate</td><td>MIT</td></tr><tr><td>Radix UI primitives</td><td>MIT</td></tr><tr><td>lucide-react</td><td>ISC</td></tr><tr><td>class-variance-authority, clsx, tailwind-merge</td><td>MIT</td></tr><tr><td>dagre</td><td>MIT</td></tr><tr><td>Vite, @vitejs/plugin-react</td><td>MIT</td></tr><tr><td>TypeScript</td><td>Apache-2.0</td></tr><tr><td>Vitest</td><td>MIT</td></tr><tr><td>@tauri-apps/api and plugins</td><td>MIT / Apache-2.0</td></tr></tbody></table></div>
+
+          <h2>Backend (Rust)</h2>
+
+          <div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>Crate</th><th>Licence</th></tr></thead><tbody><tr><td>tauri, tauri-build, tauri-plugin-dialog, tauri-plugin-fs</td><td>MIT / Apache-2.0</td></tr><tr><td>tauri-plugin-biometric (Android/iOS builds only)</td><td>MIT / Apache-2.0</td></tr><tr><td>rusqlite</td><td>MIT</td></tr><tr><td>SQLite (bundled via libsqlite3-sys)</td><td>Public domain</td></tr><tr><td>rand, rand_distr, rand_chacha</td><td>MIT / Apache-2.0</td></tr><tr><td>argon2</td><td>MIT / Apache-2.0</td></tr><tr><td>serde, serde_json</td><td>MIT / Apache-2.0</td></tr><tr><td>chrono</td><td>MIT / Apache-2.0</td></tr><tr><td>thiserror</td><td>MIT / Apache-2.0</td></tr></tbody></table></div>
+
+          <p>No component in this application makes network calls at runtime. Fonts and all assets are bundled; nothing is fetched from a CDN or external service.</p>
+        </div>
+
+        <p class="post-back"><a href="/bowcrq/">&laquo; Back to BowCRQ documents</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Michael Walker &middot; ABN 40 630 841 483 &middot; All rights reserved.</p>
+      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

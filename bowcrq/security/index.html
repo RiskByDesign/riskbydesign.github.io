@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security model | BowCRQ | RiskByDesign</title>
+  <meta name="description" content="BowCRQ security model: network posture, authentication, data at rest, change governance and Android distribution.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://riskbydesign.net/bowcrq/security/">
+  <meta name="theme-color" content="#212428">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#doc">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/lab/">The Lab</a></li>
+          <li><a href="/blog/">Writing</a></li>
+          <li><a class="nav-contact" href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article id="doc" class="section post">
+      <div class="container container-narrow">
+        <p class="eyebrow reveal"><a href="/bowcrq/">BowCRQ documents</a></p>
+        <h1 class="post-title reveal">Security model</h1>
+
+        <div class="post-body reveal">
+          <p>BowCRQ is a local-first application. This document states what that means precisely, for both the desktop app and the Android tablet build, so the guarantees are checkable rather than vibes.</p>
+
+          <h2>Network</h2>
+
+          <ul><li>No telemetry, no analytics, no crash reporting, no update checks, no fonts or assets fetched at runtime. Everything ships in the binary.</li><li>The single permitted network call is the opt-in, bring-your-own-key AI review feature. The Content Security Policy restricts <code>connect-src</code> to the local IPC origin plus <code>https://api.anthropic.com</code>, so even that feature can only ever talk to one host, and only when a user has deliberately pasted their own API key.</li><li>The Android manifest requests <code>INTERNET</code> solely for that same opt-in feature and the WebView&#x27;s local asset serving. There are no other permissions besides the biometric prompt.</li><li>The evidence register does not change this. Cited external sources are entered or imported by the analyst; the application never fetches them. A source&#x27;s URL is stored as plain text and is not retrieved at runtime, and no third-party or industry data is bundled or downloaded. External context is cited, never live-fed.</li></ul>
+
+          <h2>Accounts and authentication</h2>
+
+          <ul><li>Accounts are local to the machine. No email, no cloud identity, nothing leaves the device.</li><li>Passwords are hashed with Argon2id. There is no recovery mechanism by design: a forgotten password means a lost account, stated in the UI.</li><li>Sessions are held in memory and end when the app closes.</li></ul>
+
+          <h3>Biometric unlock (Android, opt-in)</h3>
+
+          <p>Biometric unlock never replaces or stores the password:</p>
+
+          <ul><li>Only a successful password sign-in can mint a device session: a random 256-bit token whose secret is stored Argon2id-hashed in the local database, with a 30-day expiry and at most one session per user.</li><li>The raw token stays on the device and is inert until the operating system&#x27;s biometric prompt succeeds, after which it is exchanged for the usual in-memory session.</li><li>Signing out revokes the session server-side and deletes the token. Password recovery semantics are unchanged: there still is none.</li><li>Desktop builds contain none of this; desktop sessions are never persisted.</li></ul>
+
+          <h2>Data at rest</h2>
+
+          <p>The SQLite database lives in the per-user application data directory and is not separately encrypted. Confidentiality at rest is delegated to the platform: BitLocker or equivalent on Windows, file-based encryption on Android (universal since Android 10). The login gate controls access through the app, not through the filesystem; anyone with full filesystem access on an unlocked, unencrypted device can read the data. Use device encryption.</p>
+
+          <p>The observation and evidence registers store their contents in this same database: incident notes, cited sources, provenance and any data points the analyst records. This can be sensitive material, and it is protected exactly as the rest of the model is, by the platform&#x27;s at-rest encryption. The loose export files these registers produce are plain JSON and warrant the same care as the database.</p>
+
+          <h2>Change governance</h2>
+
+          <p>Evidence-informed changes to a model are governed and recorded, not silent. When the analyst approves a calibration proposed from evidence, including a credibility-weighted blend of their own data with an external prior, the change is written to an append-only audit trail: the old and new value, the evidence and sources it drew on, the credibility weight where one applies, the analyst&#x27;s mandatory rationale, and the local username. The trail lives in the local database with everything else. It is an integrity and accountability record for how the numbers were arrived at, not a security boundary, and like all other data it never leaves the device.</p>
+
+          <h2>Android distribution</h2>
+
+          <ul><li>v1 distributes as a sideloaded APK signed with a release keystore that is held offline by the maintainer (see <code>docs/android-signing.md</code>; the keystore and its passwords are never committed).</li><li>The app enforces a minimum Android System WebView version (Chromium 110) with a clear upgrade message rather than rendering incorrectly.</li><li>Model files exported for the tablet-to-desktop hand-off are plain JSON, as documented; treat exported files with the same care as the database.</li></ul>
+
+          <h2>Reporting</h2>
+
+          <p>This is a personal project without a bug bounty. Issues can be raised with the maintainer directly.</p>
+        </div>
+
+        <p class="post-back"><a href="/bowcrq/">&laquo; Back to BowCRQ documents</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Michael Walker &middot; ABN 40 630 841 483 &middot; All rights reserved.</p>
+      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /bowcrq/
 
 Sitemap: https://riskbydesign.net/sitemap.xml

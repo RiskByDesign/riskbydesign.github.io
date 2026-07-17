@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BowCRQ privacy policy | RiskByDesign</title>
+  <meta name="description" content="Privacy policy for BowCRQ desktop and Android: what data exists, where it lives, and the single case in which anything can leave your device.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://riskbydesign.net/bowcrq/privacy/">
+  <meta name="theme-color" content="#212428">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#policy">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/lab/">The Lab</a></li>
+          <li><a href="/blog/">Writing</a></li>
+          <li><a class="nav-contact" href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article id="policy" class="section post">
+      <div class="container container-narrow">
+        <p class="eyebrow reveal"><a href="/bowcrq/">BowCRQ documents</a></p>
+        <h1 class="post-title reveal">Privacy policy</h1>
+        <p class="post-meta reveal">Last updated 17 July 2026 &middot; Applies to BowCRQ desktop and Android, version 0.8.0</p>
+
+        <div class="post-body reveal">
+          <p class="post-lede">
+            BowCRQ is a local-first application, built so that your data stays on your
+            device. This policy states, precisely and checkably, what data exists, where
+            it lives, and the single case in which anything can leave your device. It
+            mirrors the technical guarantees in <a href="/bowcrq/security/">the security model</a>; where this policy summarises,
+            that document is the detail.
+          </p>
+
+          <h2>Who is responsible</h2>
+          <p>
+            BowCRQ is a personal project by Michael Walker. There is no company behind
+            it, no server operated on your behalf, and no account for you held anywhere
+            but on your own device.
+          </p>
+
+          <h2>The short version</h2>
+          <ul>
+            <li>BowCRQ collects nothing about you. No telemetry, analytics, usage
+              statistics, crash reporting, advertising or tracking of any kind.</li>
+            <li>Everything you create stays in a local database on your device. The
+              developer never receives it.</li>
+            <li>Nothing leaves your device except in one case you control: the optional
+              AI review feature, which is off by default and sends data to your own AI
+              provider only after you enable it and supply your own key.</li>
+            <li>There is no cloud account. Passwords never leave the device and cannot
+              be recovered.</li>
+          </ul>
+
+          <h2>Data you create, and where it lives</h2>
+          <p>
+            Everything you build in BowCRQ is stored in a single SQLite database in
+            your per-user application data directory:
+          </p>
+          <ul>
+            <li>Bow tie models: nodes, connections, calibrations and settings.</li>
+            <li>The control registry and its assurance history.</li>
+            <li>Saved simulation runs and version snapshots.</li>
+            <li>The observation register: qualitative findings, notes, sources and tags.</li>
+            <li>The evidence register: your own incident data and cited external
+              sources, with their data points, provenance (source, version, URL, date)
+              and credibility notes.</li>
+            <li>The audit trail of governed, evidence-informed changes.</li>
+            <li>Your local account (username and a hashed password).</li>
+          </ul>
+          <p>
+            None of this is transmitted anywhere by the application. It exists only on
+            your device until you delete it.
+          </p>
+
+          <h2>Information BowCRQ does not collect</h2>
+          <ul>
+            <li>No telemetry, analytics or usage statistics.</li>
+            <li>No crash or error reporting.</li>
+            <li>No update checks or other automatic "phone home" requests.</li>
+            <li>No advertising identifiers, device fingerprinting or location data.</li>
+            <li>No access to your contacts, camera or microphone.</li>
+            <li>No email address or other contact detail (accounts are a username and
+              password only).</li>
+          </ul>
+
+          <h2>The one network exception: optional AI review</h2>
+          <p>
+            BowCRQ ships an optional AI assistant that can review a bow tie or help
+            draft a report. It is strictly opt-in:
+          </p>
+          <ul>
+            <li>It is <strong>off by default</strong> and does nothing until you enable
+              it and paste your own AI provider API key (currently Anthropic). The key
+              is stored locally on your device.</li>
+            <li>When you enable it and request a review, BowCRQ sends only the content
+              that review needs over HTTPS to your provider
+              (<code>https://api.anthropic.com</code>): a compact text description of
+              the bow tie (node names and kinds, linked control names, and the
+              connections between nodes) and, for a report, a summary of the simulation
+              result metrics. It does not send your database, your evidence register
+              notes, your sources, your credibility notes or your account details.</li>
+            <li>The application's Content Security Policy permits network connections
+              to that single host and no other, so even this feature cannot talk to
+              anywhere else.</li>
+            <li>Once data reaches your chosen provider it is handled under that
+              provider's own privacy terms, not this policy. Review your provider's
+              terms before enabling the feature. To keep BowCRQ fully offline, simply
+              leave the feature disabled or do not supply a key.</li>
+          </ul>
+
+          <h2>Authentication and biometrics</h2>
+          <ul>
+            <li>Accounts are local to the device: a username and a password only.
+              Passwords are hashed with Argon2id and there is no recovery mechanism by
+              design, so a forgotten password means a lost account.</li>
+            <li>Sessions are held in memory and end when the app closes.</li>
+            <li>On Android, optional biometric unlock is handled by the operating
+              system. BowCRQ never sees or stores your fingerprint or any biometric
+              data; it only holds a local, hashed device token that the OS biometric
+              prompt unlocks. See <a href="/bowcrq/security/">the security model</a> for the detail.</li>
+          </ul>
+
+          <h2>Data sharing</h2>
+          <ul>
+            <li>The developer shares none of your data, because the developer receives
+              none of it.</li>
+            <li>The only third party that can ever receive any of your data is the AI
+              provider you choose, and only through the opt-in feature described
+              above.</li>
+            <li>The app is built with third-party open-source software components,
+              listed exhaustively in <a href="/bowcrq/sbom/">the SBOM</a> and summarised in <a href="/bowcrq/third-party-notices/">the third-party notices</a>.
+              These are libraries compiled into the application; they run locally and
+              do not receive or transmit your data.</li>
+          </ul>
+
+          <h2>Exports and shared files</h2>
+          <p>
+            BowCRQ can export bow ties, the observation register and the evidence
+            register as plain JSON files, and can produce reports. These files are not
+            encrypted and contain whatever you put into the model. Anyone you send an
+            export or report to receives its full contents, so handle them with the
+            same care as the database itself.
+          </p>
+
+          <h2>Data at rest and security</h2>
+          <p>
+            The local database is not separately encrypted; confidentiality at rest is
+            provided by your platform (BitLocker or equivalent on Windows, file-based
+            encryption on Android). Anyone with full filesystem access to an unlocked,
+            unencrypted device can read the data. Use device encryption. The full
+            security model, including at-rest protection and the governed audit trail,
+            is documented in <a href="/bowcrq/security/">the security model</a>.
+          </p>
+
+          <h2>Retention and deletion</h2>
+          <ul>
+            <li>You control retention entirely. Data persists until you delete it in
+              the app or remove the application's data.</li>
+            <li>Deleting a bow tie or a control deliberately returns any attached
+              observations and evidence to their registers rather than destroying those
+              findings; delete those items explicitly if you want them gone.</li>
+            <li>Uninstalling the app, or deleting its data directory, removes the
+              database. There are no server-side copies anywhere to request deletion
+              of, because there is no server.</li>
+          </ul>
+
+          <h2>Children</h2>
+          <p>
+            BowCRQ is a professional risk-analysis tool, not directed at children, and
+            it collects no personal information from anyone.
+          </p>
+
+          <h2>Your control over your data</h2>
+          <p>
+            Because all of your data is local and self-hosted, you have direct and
+            complete control over it: you can access, export, correct and delete it at
+            any time, inside the app or by managing its files. There is no external
+            data controller holding your information, so there is no one to make a
+            subject-access or deletion request to; the controls are all in your hands.
+          </p>
+
+          <h2>Changes to this policy</h2>
+          <p>
+            This policy is versioned with the application. The "last updated" date and
+            the applicable version at the top indicate its currency; material changes
+            will update both.
+          </p>
+
+          <h2>Contact</h2>
+          <p>
+            BowCRQ is a personal project without a formal support channel. Questions
+            about this policy or the app's data handling can be raised with the
+            maintainer directly at
+            <a href="mailto:cyber@riskbydesign.net">cyber@riskbydesign.net</a>, as
+            noted in <a href="/bowcrq/security/">the security model</a>.
+          </p>
+
+          <hr>
+
+          <p>
+            This policy describes the application's actual behaviour, which is
+            verifiable from the source, <a href="/bowcrq/sbom/">the SBOM</a> and <a href="/bowcrq/security/">the security model</a>. It is provided in
+            good faith and is not legal advice; if you are adopting BowCRQ within an
+            organisation that has specific regulatory obligations, have it reviewed
+            against those obligations.
+          </p>
+        </div>
+
+        <p class="post-back"><a href="/bowcrq/">&laquo; Back to BowCRQ documents</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Michael Walker &middot; ABN 40 630 841 483 &middot; All rights reserved.</p>
+      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
