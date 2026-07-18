@@ -1,4 +1,4 @@
-/* M. Walker / RiskByDesign - site behaviour.
+/* RiskByDesign - site behaviour.
    Vanilla JS only. No dependencies, no network calls, no tracking. */
 
 (function () {
