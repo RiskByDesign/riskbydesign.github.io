@@ -28,6 +28,7 @@
   }
 
   /* Scroll reveal */
+  var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     var observer = new IntersectionObserver(
       function (entries) {
@@ -38,11 +39,21 @@
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
-    document.querySelectorAll(".reveal").forEach(function (el) {
+    reveals.forEach(function (el) {
       observer.observe(el);
     });
+    /* Safety net: if any .reveal has not been marked visible after 800 ms
+       (e.g. it is taller than the viewport can intersect, or the observer
+       misfires), force it visible so content is never permanently hidden. */
+    setTimeout(function () {
+      reveals.forEach(function (el) {
+        if (!el.classList.contains("is-visible")) {
+          el.classList.add("is-visible");
+        }
+      });
+    }, 800);
   } else {
     document.documentElement.classList.add("no-observer");
   }
