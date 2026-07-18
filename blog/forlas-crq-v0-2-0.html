@@ -3,184 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FORLAS CRQ v0.2.0: show your working | RiskByDesign</title>
-  <meta name="description" content="FORLAS CRQ v0.2.0 is out: a new Analysis and Evidence area, segregation of duties on approvals, customisable layouts, a scenario type picker, and more.">
-  <link rel="canonical" href="https://riskbydesign.net/blog/forlas-crq-v0-2-0.html">
+  <title>RiskByDesign</title>
+  <meta name="description" content="RiskByDesign is temporarily offline while a few things are finalised.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://riskbydesign.net/">
   <meta name="theme-color" content="#212428">
-
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://riskbydesign.net/blog/forlas-crq-v0-2-0.html">
-  <meta property="og:site_name" content="RiskByDesign">
-  <meta property="og:title" content="FORLAS CRQ v0.2.0: show your working">
-  <meta property="og:description" content="A new Analysis and Evidence area, segregation of duties on approvals, customisable layouts, and a scenario type picker. The free, local-first CRQ platform grows up a little.">
-  <meta property="og:image" content="https://riskbydesign.net/assets/og-image.png">
-  <meta property="article:published_time" content="2026-07-11">
-  <meta property="article:author" content="RiskByDesign">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FORLAS CRQ v0.2.0: show your working">
-  <meta name="twitter:description" content="A new Analysis and Evidence area, segregation of duties on approvals, customisable layouts, and a scenario type picker.">
-  <meta name="twitter:image" content="https://riskbydesign.net/assets/og-image.png">
 
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/css/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "FORLAS CRQ v0.2.0: show your working",
-    "datePublished": "2026-07-11",
-    "dateModified": "2026-07-11",
-    "url": "https://riskbydesign.net/blog/forlas-crq-v0-2-0.html",
-    "image": "https://riskbydesign.net/assets/og-image.png",
-    "author": { "@type": "Organization", "name": "RiskByDesign", "url": "https://riskbydesign.net/" }
-  }
-  </script>
+  <style>
+    .holding {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      gap: 28px;
+    }
+    .holding .brand-plate { margin-bottom: 12px; }
+    .holding h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
+    .holding p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .holding a { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 3px; }
+    .holding .footer-note {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-
-  <a class="skip-link" href="#post">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
-      </a>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/lab/">The Lab</a></li>
-          <li><a href="/blog/">Writing</a></li>
-          <li><a class="nav-contact" href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <article id="post" class="section post">
-      <div class="container container-narrow">
-        <p class="eyebrow reveal">Writing</p>
-        <h1 class="post-title reveal">FORLAS CRQ v0.2.0: show your working</h1>
-        <p class="post-meta reveal">11 July 2026 &middot; RiskByDesign</p>
-
-        <div class="post-body reveal">
-          <p class="post-lede">
-            FORLAS CRQ v0.2.0 is out. The theme of this release is defensibility:
-            a risk number is only as good as the reasoning behind it, and this
-            version makes that reasoning a first-class part of the tool.
-          </p>
-
-          <h2>Analysis &amp; Evidence</h2>
-          <p>
-            The headline feature. Every scenario now has a dedicated Analysis &amp;
-            Evidence area where you capture the thinking behind the numbers: an
-            analysis narrative with an overall confidence rating, the data and
-            evidence you relied on, the assumptions you made, the gaps and
-            limitations you know about, and a short rationale for each FAIR input.
-          </p>
-          <p>
-            When an auditor or a board member asks "where did this number come
-            from", the answer now lives beside the number. Saves are recorded in
-            the audit log, and the workspace links straight to the selected
-            scenario's analysis.
-          </p>
-
-          <h2>Segregation of duties on approvals</h2>
-          <p>
-            The person who submits a scenario for review can no longer approve it;
-            a separate approver is required. It's a basic governance control that
-            most enterprise workflow tools charge extra for, and it's on by default.
-            Single-user installs can turn it off under Settings, Governance.
-          </p>
-          <p>
-            Alongside it, the approval panel now shows a clear Draft, Submitted,
-            Approved stepper, so a scenario's position in the review pipeline is
-            visible at a glance.
-          </p>
-
-          <h2>Customisable layouts</h2>
-          <p>
-            Dashboard cards and the workspace side panels can now be dragged into
-            whatever order suits how you work, using the grip handle on each card.
-            Cards reorder live under the pointer while you drag, the arrangement is
-            saved per machine, and a Reset layout control restores the default.
-          </p>
-
-          <h2>Scenario type picker</h2>
-          <p>
-            Scenario type is now a dropdown of pre-canned categories (Ransomware,
-            Insider Threat, Cloud Misconfiguration, and more), and you can add your
-            own categories, which persist for future scenarios.
-          </p>
-
-          <h2>FORLAS branding</h2>
-          <p>
-            The sign-in and first-run screens and the executive and board report
-            covers (HTML/PDF and Word) now carry the FORLAS brand tile, so the
-            reports you hand upward look as considered as the numbers inside them.
-          </p>
-
-          <h2>Also in this release</h2>
-          <p>
-            A handful of fixes and smaller changes shipped too, including some
-            solid quality-of-life work on shutdown behaviour and account
-            management. The full detail is in the
-            <a href="https://github.com/RiskByDesign/forlas-crq/blob/main/CHANGELOG.md" target="_blank" rel="noopener">changelog on GitHub</a>.
-          </p>
-
-          <h2>Get it</h2>
-          <p>
-            FORLAS CRQ remains free, open source, and in beta:
-            <a href="https://github.com/RiskByDesign/forlas-crq" target="_blank" rel="noopener">github.com/RiskByDesign/forlas-crq</a>.
-            As always, it's local-first: one executable, one database file you own.
-            Your data belongs to you; cloud features are optional.
-          </p>
-          <p>
-            If you're using it, feedback on what works and what doesn't is welcome;
-            the contact links are on the <a href="/#contact">home page</a>.
-          </p>
-        </div>
-
-        <aside class="post-related">
-          <h2>Related reading</h2>
-          <div class="related-list">
-            <a class="related-item" href="/blog/inside-forlas-crq.html">
-              <span class="related-kicker">Product tour</span>
-              <strong>Inside FORLAS CRQ: a tour of quantified cyber risk</strong>
-              <span class="related-desc">A full walkthrough of what the platform does, screen by screen.</span>
-            </a>
-            <a class="related-item" href="/blog/cyber-risk-language-problem.html">
-              <span class="related-kicker">The case for CRQ</span>
-              <strong>Cyber risk has a language problem</strong>
-              <span class="related-desc">Why quantified risk beats a colour-coded matrix, and who FORLAS is for.</span>
-            </a>
-            <a class="related-item" href="/lab/#forlas-crq">
-              <span class="related-kicker">The Lab</span>
-              <strong>FORLAS CRQ</strong>
-              <span class="related-desc">Full capabilities, tech, and downloads for the platform.</span>
-            </a>
-          </div>
-        </aside>
-      </div>
-    </article>
+  <main class="holding">
+    <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+    <h1>Temporarily offline</h1>
+    <p>
+      RiskByDesign is briefly paused while a few things are finalised behind the
+      scenes. Content will be back shortly.
+    </p>
+    <p>
+      Need to get in touch in the meantime? Email
+      <a href="mailto:cyber@riskbydesign.net">cyber@riskbydesign.net</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year">2026</span> RiskByDesign</p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> RiskByDesign &middot; All rights reserved.</p>
-      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
-    </div>
-  </footer>
-
-  <script src="/js/main.js"></script>
+  <script>
+    var y = document.getElementById('year');
+    if (y) y.textContent = String(new Date().getFullYear());
+  </script>
 </body>
 </html>

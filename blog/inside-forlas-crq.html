@@ -3,253 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inside FORLAS CRQ: a tour of quantified cyber risk | RiskByDesign</title>
-  <meta name="description" content="A walkthrough of FORLAS CRQ: Monte Carlo loss distributions, exceedance curves, sensitivity analysis, tolerance metrics, portfolio aggregation, and the evidence behind every number. Free, local-first, offline.">
-  <link rel="canonical" href="https://riskbydesign.net/blog/inside-forlas-crq.html">
+  <title>RiskByDesign</title>
+  <meta name="description" content="RiskByDesign is temporarily offline while a few things are finalised.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://riskbydesign.net/">
   <meta name="theme-color" content="#212428">
-
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://riskbydesign.net/blog/inside-forlas-crq.html">
-  <meta property="og:site_name" content="RiskByDesign">
-  <meta property="og:title" content="Inside FORLAS CRQ: a tour of quantified cyber risk">
-  <meta property="og:description" content="Monte Carlo loss distributions, exceedance curves, sensitivity analysis, tolerance metrics, and portfolio aggregation. The depth of an enterprise CRQ platform, free and running entirely on your machine.">
-  <meta property="og:image" content="https://riskbydesign.net/assets/forlas-portfolio-dashboard.png">
-  <meta property="article:published_time" content="2026-07-11">
-  <meta property="article:author" content="RiskByDesign">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Inside FORLAS CRQ: a tour of quantified cyber risk">
-  <meta name="twitter:description" content="Monte Carlo loss distributions, exceedance curves, sensitivity analysis, tolerance metrics, and portfolio aggregation. Free and local-first.">
-  <meta name="twitter:image" content="https://riskbydesign.net/assets/forlas-portfolio-dashboard.png">
 
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/css/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Inside FORLAS CRQ: a tour of quantified cyber risk",
-    "datePublished": "2026-07-11",
-    "dateModified": "2026-07-11",
-    "url": "https://riskbydesign.net/blog/inside-forlas-crq.html",
-    "image": "https://riskbydesign.net/assets/forlas-portfolio-dashboard.png",
-    "author": { "@type": "Organization", "name": "RiskByDesign", "url": "https://riskbydesign.net/" }
-  }
-  </script>
+  <style>
+    .holding {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      gap: 28px;
+    }
+    .holding .brand-plate { margin-bottom: 12px; }
+    .holding h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
+    .holding p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .holding a { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 3px; }
+    .holding .footer-note {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-
-  <a class="skip-link" href="#post">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
-      </a>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/lab/">The Lab</a></li>
-          <li><a href="/blog/">Writing</a></li>
-          <li><a class="nav-contact" href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <article id="post" class="section post">
-      <div class="container container-narrow">
-        <p class="eyebrow reveal">Writing</p>
-        <h1 class="post-title reveal">Inside FORLAS CRQ: a tour of quantified cyber risk</h1>
-        <p class="post-meta reveal">11 July 2026 &middot; RiskByDesign</p>
-
-        <div class="post-body reveal">
-          <p class="post-lede">
-            RiskByDesign has written about why "high, medium, low" fails a board. This
-            is the other half of the story: what it looks like to do it properly. Here is a walk
-            through FORLAS CRQ, using its built-in demo scenarios, so you can see the
-            depth for yourself. Every figure below comes from the tool as it ships,
-            running entirely offline on a laptop.
-          </p>
-
-          <h2>Every scenario, simulated 100,000 times</h2>
-          <p>
-            A single risk scenario in FORLAS is not one number. It is a full probability
-            distribution, built by running the FAIR model a hundred thousand times and
-            recording the annual loss each time. Instead of a point estimate that pretends
-            to a precision it doesn't have, you get the whole shape of the outcome.
-          </p>
-          <p>
-            The result is expressed the way finance already thinks. An average annual loss,
-            yes, but also the percentiles that actually matter for decisions: the P90, the
-            P95, the P99, and the tail mean beyond the 95th percentile, which is the number
-            that answers "when it goes badly, how badly". You read the loss distribution and
-            the loss exceedance curve side by side, and every reference line, P50, P95, your
-            tolerance, an insurance retention or limit, a capital reserve, can be laid over
-            both charts at once.
-          </p>
-
-          <figure class="post-figure">
-            <a href="/assets/forlas-scenario-analysis.png" target="_blank" rel="noopener">
-              <img src="/assets/forlas-scenario-analysis.png"
-                   alt="FORLAS CRQ scenario analysis: percentile tiles showing mean A$1.3M, P95 A$7.1M and P99 A$18.1M, a loss distribution histogram and loss exceedance curve from 100,000 iterations, a sensitivity chart, and tolerance metrics"
-                   loading="lazy">
-            </a>
-            <figcaption>One scenario, simulated 100,000 times: the loss distribution and exceedance curve, the inputs driving the result, and how it sits against tolerance. Click to enlarge.</figcaption>
-          </figure>
-
-          <h2>Know what is actually driving the loss</h2>
-          <p>
-            This is the part most people don't expect from a free tool. FORLAS runs a
-            sensitivity analysis on every scenario, ranking the FAIR inputs by how much
-            they drive the total loss. In the scenario above, Primary Loss Magnitude
-            correlates with the outcome at 0.99 and Secondary Loss at 0.80, while Threat
-            Event Frequency and Vulnerability barely move the needle.
-          </p>
-          <p>
-            That ranking is a to-do list. It tells you where a better estimate would
-            actually change the answer, and it tells your stakeholders which assumption to
-            argue about. If the whole result hinges on primary loss magnitude, then that is
-            the number to defend, and the debate about threat frequency is a distraction.
-            Directing effort to the inputs that matter is the difference between analysis
-            and theatre.
-          </p>
-
-          <h2>Measure against your risk tolerance</h2>
-          <p>
-            A loss number in isolation doesn't tell you whether to act. FORLAS measures each
-            scenario against the tolerance you set and turns it into plain language: the
-            probability of exceeding tolerance, how much of your tolerance the mean loss
-            consumes, the headroom left in dollars, a confidence interval on the mean, and
-            how often the simulation produced no loss at all. In the example, there is a
-            12.4% chance of breaching a A$3M tolerance, mean utilisation sits at 43%, and
-            the scenario earns a "within tolerance" badge.
-          </p>
-          <p>
-            This is the language that turns a model into a decision. Not "the risk is
-            amber", but "there is a one in eight chance we exceed the line we drew, and we
-            have A$1.7M of headroom before we do".
-          </p>
-
-          <h2>Roll it up to a portfolio</h2>
-          <p>
-            Individual scenarios are useful. A portfolio view is what a CISO actually
-            presents. FORLAS aggregates every scenario into a single annual loss picture for
-            the whole organisation, correctly combining the distributions rather than naively
-            adding worst cases, and ranks each scenario by its contribution.
-          </p>
-          <p>
-            At a glance you see the portfolio's expected annual loss, its tail, and the
-            handful of scenarios responsible for most of it. In the demo portfolio, a
-            A$16.1M expected annual loss resolves into a clear pecking order: ransomware on
-            the production ERP and a web application breach together account for nearly
-            three quarters of it. That is a budget conversation with an obvious first move.
-            You can set a risk appetite line and read the portfolio loss exceedance curve
-            straight off, then capture the whole board-ready snapshot in a click.
-          </p>
-
-          <figure class="post-figure">
-            <a href="/assets/forlas-portfolio-dashboard.png" target="_blank" rel="noopener">
-              <img src="/assets/forlas-portfolio-dashboard.png"
-                   alt="FORLAS CRQ portfolio dashboard: A$16.1M portfolio ALE with P95 A$42.8M and tail mean A$70.6M, a top loss drivers table ranking six scenarios by contribution, and a portfolio loss exceedance curve"
-                   loading="lazy">
-            </a>
-            <figcaption>The portfolio view: six scenarios aggregated into one annual loss picture, ranked by contribution, with a portfolio exceedance curve. Click to enlarge.</figcaption>
-          </figure>
-
-          <h2>Make it yours</h2>
-          <p>
-            FORLAS ships with a light and a dark theme, and every card on the dashboard and
-            in the workspace can be dragged into the order that suits how you work, then
-            saved. Small thing, but it means the view you present is the view you chose, not
-            a layout someone else decided was best for you.
-          </p>
-
-          <figure class="post-figure">
-            <a href="/assets/forlas-dashboard-dark.png" target="_blank" rel="noopener">
-              <img src="/assets/forlas-dashboard-dark.png"
-                   alt="FORLAS CRQ portfolio dashboard in dark theme, showing the same aggregated metrics and top drivers with cards arranged in a custom order"
-                   loading="lazy">
-            </a>
-            <figcaption>Dark theme, and every card draggable into the order you want. Click to enlarge.</figcaption>
-          </figure>
-
-          <h2>Show your working</h2>
-          <p>
-            A number no one can defend is worse than no number at all. Alongside every
-            scenario, FORLAS keeps an Analysis and Evidence record: the narrative and
-            confidence behind the estimate, the data you relied on, the assumptions you
-            made, the gaps you know about, and a short rationale for each individual FAIR
-            input. When someone asks where a number came from, the answer sits right beside
-            it, and it is captured in the audit log.
-          </p>
-
-          <figure class="post-figure">
-            <a href="/assets/forlas-analysis-evidence.png" target="_blank" rel="noopener">
-              <img src="/assets/forlas-analysis-evidence.png"
-                   alt="FORLAS CRQ Analysis and Evidence screen: fields for an analysis narrative, overall confidence, data relied upon, assumptions, gaps and limitations, and a per-input rationale panel for each FAIR factor"
-                   loading="lazy">
-            </a>
-            <figcaption>Analysis and Evidence: the reasoning captured beside every number, down to a rationale for each FAIR input. Click to enlarge.</figcaption>
-          </figure>
-
-          <h2>And it runs on your machine</h2>
-          <p>
-            Everything above happens locally. FORLAS CRQ is one desktop application with one
-            database file that you own. Your data belongs to you. Cloud features are optional. No accounts, no telemetry, no
-            external services. The most sensitive risk analysis your organisation holds never
-            leaves the building, because there is nowhere for it to go.
-          </p>
-          <p>
-            The established platforms that do this kind of work start in the five figures a
-            year. FORLAS is free, open source, and in open beta:
-            <a href="https://github.com/RiskByDesign/forlas-crq" target="_blank" rel="noopener">github.com/RiskByDesign/forlas-crq</a>.
-            Download it, point it at your own scenarios, and see what your risk looks like
-            in numbers. If you do, feedback is welcome on how you get on; the contact
-            links are on the <a href="/#contact">home page</a>.
-          </p>
-        </div>
-
-        <aside class="post-related">
-          <h2>Related reading</h2>
-          <div class="related-list">
-            <a class="related-item" href="/blog/cyber-risk-language-problem.html">
-              <span class="related-kicker">The case for CRQ</span>
-              <strong>Cyber risk has a language problem</strong>
-              <span class="related-desc">Why "high, medium, low" fails a board, and how FAIR and Monte Carlo replace colours with dollars.</span>
-            </a>
-            <a class="related-item" href="/blog/forlas-crq-v0-2-0.html">
-              <span class="related-kicker">Release notes</span>
-              <strong>FORLAS CRQ v0.2.0: show your working</strong>
-              <span class="related-desc">The newest features, including the Analysis and Evidence record shown in this tour.</span>
-            </a>
-            <a class="related-item" href="/lab/#forlas-crq">
-              <span class="related-kicker">The Lab</span>
-              <strong>FORLAS CRQ</strong>
-              <span class="related-desc">Full capabilities, tech, and downloads for the platform.</span>
-            </a>
-          </div>
-        </aside>
-      </div>
-    </article>
+  <main class="holding">
+    <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+    <h1>Temporarily offline</h1>
+    <p>
+      RiskByDesign is briefly paused while a few things are finalised behind the
+      scenes. Content will be back shortly.
+    </p>
+    <p>
+      Need to get in touch in the meantime? Email
+      <a href="mailto:cyber@riskbydesign.net">cyber@riskbydesign.net</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year">2026</span> RiskByDesign</p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> RiskByDesign &middot; All rights reserved.</p>
-      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
-    </div>
-  </footer>
-
-  <script src="/js/main.js"></script>
+  <script>
+    var y = document.getElementById('year');
+    if (y) y.textContent = String(new Date().getFullYear());
+  </script>
 </body>
 </html>

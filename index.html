@@ -1,330 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" id="top" class="no-js">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RiskByDesign | Cyber Risk Quantification and Security Tooling</title>
-  <meta name="description" content="RiskByDesign builds local-first cyber risk quantification and security tooling. FAIR-based Monte Carlo simulation and calibrated estimation training. Your data belongs to you; cloud features are optional.">
+  <title>RiskByDesign</title>
+  <meta name="description" content="RiskByDesign is temporarily offline while a few things are finalised.">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://riskbydesign.net/">
   <meta name="theme-color" content="#212428">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riskbydesign.net/">
-  <meta property="og:site_name" content="RiskByDesign">
-  <meta property="og:title" content="RiskByDesign | Cyber Risk Quantification and Security Tooling">
-  <meta property="og:description" content="Local-first cyber risk quantification and security tooling. FAIR-based Monte Carlo simulation and calibrated estimation training. Your data belongs to you; cloud features are optional.">
-  <meta property="og:image" content="https://riskbydesign.net/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="RiskByDesign, cyber risk quantification and security tooling, riskbydesign.net">
-
-  <!-- Twitter / X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="RiskByDesign | Cyber Risk Quantification and Security Tooling">
-  <meta name="twitter:description" content="Local-first cyber risk quantification and security tooling. FAIR-based Monte Carlo simulation and calibrated estimation training. Your data belongs to you; cloud features are optional.">
-  <meta name="twitter:image" content="https://riskbydesign.net/assets/og-image.png">
-
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://riskbydesign.net/#riskbydesign",
-        "name": "RiskByDesign",
-        "url": "https://riskbydesign.net/",
-        "logo": "https://riskbydesign.net/assets/riskbydesign-logo.png",
-        "email": "mailto:cyber@riskbydesign.net",
-        "description": "Independent cyber risk quantification and security tooling. Local-first, measurable, and open to everyone.",
-        "sameAs": [
-          "https://github.com/RiskByDesign"
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "FORLAS CRQ",
-        "url": "https://github.com/RiskByDesign/forlas-crq",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "Windows",
-        "description": "A local-first quantitative cyber risk platform built on the FAIR methodology: Monte Carlo simulation, portfolio aggregation, and boardroom-ready reporting, fully offline.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@id": "https://riskbydesign.net/#riskbydesign" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Calibrated Estimation Course",
-        "url": "https://github.com/RiskByDesign/Calibrated_Course",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "Any (runs offline in a browser)",
-        "description": "Self-contained, offline HTML tools that train subject matter experts to give calibrated probability estimates: practice trainer with Brier scoring plus a nine-module course.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@id": "https://riskbydesign.net/#riskbydesign" }
-      }
-    ]
-  }
-  </script>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .holding {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      gap: 28px;
+    }
+    .holding .brand-plate { margin-bottom: 12px; }
+    .holding h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
+    .holding p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .holding a { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 3px; }
+    .holding .footer-note {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-
-  <a class="skip-link" href="#beliefs">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">
-        <span class="brand-plate"><img class="brand-logo" src="assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
-      </a>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#beliefs">Beliefs</a></li>
-          <li><a href="lab/">The Lab</a></li>
-          <li><a href="blog/">Writing</a></li>
-          <li><a class="nav-contact" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="container hero-grid">
-
-        <div class="hero-copy">
-          <p class="eyebrow reveal">Welcome</p>
-          <h1 class="reveal">
-            This is <span class="accent">RiskByDesign</span>.
-          </h1>
-          <p class="hero-lede reveal">
-            Cybersecurity shouldn't be exclusive. Everyone deserves access to
-            practical, professional grade cybersecurity tools, training, and
-            services, without prohibitive costs or the need for years of technical
-            expertise. RiskByDesign exists to bridge the gap between complex security
-            practices and real-world usability, making cybersecurity accessible,
-            understandable, and achievable for individuals and businesses alike.
-          </p>
-
-          <div class="hero-meta reveal">
-            <div class="meta-block">
-              <p class="meta-label">Find RiskByDesign</p>
-              <div class="tile-row">
-                <a class="tile" href="https://github.com/RiskByDesign" target="_blank" rel="noopener" aria-label="GitHub">
-                  <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                </a>
-                <a class="tile" href="mailto:cyber@riskbydesign.net" aria-label="Email">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ WHAT RISKBYDESIGN BELIEVES IN ============ -->
-    <section id="beliefs" class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Ethos</p>
-        <h2 class="reveal">What RiskByDesign Believes In</h2>
-
-        <div class="services reveal">
-
-          <article class="service">
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6 8.7 4.9 4.9 0 0 0 7 18.5z"/></svg>
-            </span>
-            <h3>Cloud should be a choice</h3>
-            <p>Adopt cloud services because they suit your needs, not because they're your only option.</p>
-          </article>
-
-          <article class="service">
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 6c-2-1.4-4.5-2-8-2v14c3.5 0 6 .6 8 2 2-1.4 4.5-2 8-2V4c-3.5 0-6 .6-8 2z"/><path d="M12 6v14"/></svg>
-            </span>
-            <h3>Knowledge should be within reach</h3>
-            <p>Practical cybersecurity expertise should be accessible, understandable, and available to everyone.</p>
-          </article>
-
-          <article class="service">
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 9.5 4-1.1 7-5.1 7-9.5V6l-7-3z"/><path d="m9.5 12 2 2 3.5-4"/></svg>
-            </span>
-            <h3>Security should be measurable</h3>
-            <p>Effective cybersecurity is built through decisions you can quantify, defend, and improve, not slogans and heat maps.</p>
-          </article>
-
-          <article class="service">
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="7.5" width="19" height="9" rx="4.5"/><circle cx="16.5" cy="12" r="2.6"/></svg>
-            </span>
-            <h3>Capability over complexity</h3>
-            <p>The best security solutions are the ones people can confidently use.</p>
-          </article>
-
-          <article class="service">
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/><path d="m10 8-2 2 2 2M14 8l2 2-2 2"/></svg>
-            </span>
-            <h3>Local-First Software</h3>
-            <p>Everything runs on your machine: one executable, one database file you own. Your data belongs to you. Cloud features are optional.</p>
-          </article>
-
-          <article class="service">
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/><path d="m13.5 4-3 16"/></svg>
-            </span>
-            <h3>Open Source</h3>
-            <p>Published in the open on GitHub: free to inspect, verify, and extend. Trust should never require faith.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WORK ============ -->
-    <section id="work" class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Portfolio</p>
-        <h2 class="reveal">Tools built to be trusted</h2>
-        <p class="section-lede reveal">
-          Software for people who have to defend a number in front of a board.
-          Free and open source.
-        </p>
-
-        <div class="cards">
-
-          <!-- FORLAS CRQ -->
-          <article class="card card-flagship reveal">
-            <img class="card-logo" src="assets/forlas-crq-logo.png" alt="FORLAS CRQ logo" width="480" height="480" loading="lazy">
-            <h3 class="visually-hidden">FORLAS CRQ</h3>
-            <div class="badges card-badges">
-              <span class="badge badge-accent">Flagship</span>
-              <span class="badge">Beta</span>
-            </div>
-            <p class="card-desc">
-              A local-first quantitative cyber risk platform built on the FAIR methodology.
-              Model loss scenarios, run Monte Carlo simulations, aggregate a whole portfolio,
-              and produce boardroom-ready reports, all from a single desktop application
-              with one database file that you own.
-            </p>
-            <ul class="feature-list">
-              <li>FAIR-based scenario modelling with Monte Carlo simulation</li>
-              <li>Portfolio aggregation and loss exceedance curves</li>
-              <li>PDF and Word reporting, ready for executives and auditors</li>
-              <li>Fully offline: one executable, one SQLite file, zero external services</li>
-            </ul>
-            <ul class="tags" aria-label="Technology">
-              <li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>Tauri</li><li>SQLite</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="https://github.com/RiskByDesign/forlas-crq" target="_blank" rel="noopener">View on GitHub</a>
-              <a class="card-more" href="lab/#forlas-crq">Full details</a>
-              <span class="price-note">Free and open source</span>
-              <!-- SALES SLOT: when a paid edition ships, add alongside the button above:
-                   <a class="btn btn-ghost" href="PRICING_OR_CHECKOUT_URL">Get the full edition</a>
-                   and update the price-note text. The layout already reserves the space. -->
-            </div>
-          </article>
-
-          <!-- Calibrated Estimation Course -->
-          <article class="card reveal">
-            <img class="card-logo" src="assets/calibrated-course-logo.png" alt="Calibrated Estimation Course logo" width="480" height="480" loading="lazy">
-            <h3 class="visually-hidden">Calibrated Estimation Course</h3>
-            <div class="badges card-badges">
-              <span class="badge">Open source</span>
-            </div>
-            <p class="card-desc">
-              Self-contained, offline HTML tools that train subject matter experts to give
-              calibrated probability estimates before their inputs reach a quantitative risk
-              model. Based on the estimation training method popularised by Douglas Hubbard:
-              repeated testing with immediate feedback until stated confidence matches actual accuracy.
-            </p>
-            <ul class="feature-list">
-              <li>240-question bank across interval and binary rounds</li>
-              <li>Brier scoring, hit rates, and a live calibration curve</li>
-              <li>Nine-module self-paced course with a printable completion certificate</li>
-              <li>Single HTML files: no build step, no network calls, runs from disk</li>
-            </ul>
-            <ul class="tags" aria-label="Technology">
-              <li>Vanilla JS</li><li>Single-file HTML</li><li>Offline</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="https://github.com/RiskByDesign/Calibrated_Course" target="_blank" rel="noopener">View on GitHub</a>
-              <a class="card-more" href="lab/#calibrated-course">Full details</a>
-              <span class="price-note">Free and open source</span>
-            </div>
-          </article>
-
-          <!-- BowCRQ (teaser) -->
-          <article class="card reveal">
-            <img class="card-logo" src="assets/bowcrq-logo.png" alt="BowCRQ logo: bow tie analysis with risk quantification" width="480" height="480" loading="lazy">
-            <h3 class="visually-hidden">BowCRQ</h3>
-            <div class="badges card-badges">
-              <span class="badge badge-accent">Coming soon</span>
-            </div>
-            <p class="card-desc">
-              A local-first desktop application for quantified Bow Tie risk analysis
-              with Cyber Risk Quantification (CRQ).
-            </p>
-            <ul class="feature-list">
-              <li>Local-first</li>
-              <li>Your data belongs to you; cloud features are optional</li>
-              <li>No telemetry, no external services, no API dependencies</li>
-              <li>Everything runs locally</li>
-            </ul>
-            <div class="card-actions">
-              <a class="card-more" href="lab/#bowcrq">Full details</a>
-              <span class="price-note">In development. Watch this space.</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="section">
-      <div class="container">
-        <p class="eyebrow reveal">Contact</p>
-        <h2 class="reveal">Get in touch</h2>
-        <p class="section-lede reveal">
-          Questions about the tools or beta feedback: all welcome.
-        </p>
-        <div class="contact-grid reveal">
-          <a class="contact-card" href="https://github.com/RiskByDesign" target="_blank" rel="noopener">
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">github.com/RiskByDesign</span>
-          </a>
-          <a class="contact-card" href="mailto:cyber@riskbydesign.net">
-            <span class="contact-label">Email</span>
-            <span class="contact-value">cyber@riskbydesign.net</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
+  <main class="holding">
+    <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+    <h1>Temporarily offline</h1>
+    <p>
+      RiskByDesign is briefly paused while a few things are finalised behind the
+      scenes. Content will be back shortly.
+    </p>
+    <p>
+      Need to get in touch in the meantime? Email
+      <a href="mailto:cyber@riskbydesign.net">cyber@riskbydesign.net</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year">2026</span> RiskByDesign</p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> RiskByDesign &middot; All rights reserved.</p>
-      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script>
+    var y = document.getElementById('year');
+    if (y) y.textContent = String(new Date().getFullYear());
+  </script>
 </body>
 </html>

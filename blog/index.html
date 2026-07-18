@@ -3,106 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing | RiskByDesign</title>
-  <meta name="description" content="Articles on cyber risk quantification, FAIR, Monte Carlo simulation, and calibrated estimation, published by RiskByDesign.">
-  <link rel="canonical" href="https://riskbydesign.net/blog/">
+  <title>RiskByDesign</title>
+  <meta name="description" content="RiskByDesign is temporarily offline while a few things are finalised.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://riskbydesign.net/">
   <meta name="theme-color" content="#212428">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://riskbydesign.net/blog/">
-  <meta property="og:site_name" content="RiskByDesign">
-  <meta property="og:title" content="Writing | RiskByDesign">
-  <meta property="og:description" content="Articles on cyber risk quantification, FAIR, Monte Carlo simulation, and calibrated estimation.">
-  <meta property="og:image" content="https://riskbydesign.net/assets/og-image.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Writing | RiskByDesign">
-  <meta name="twitter:description" content="Articles on cyber risk quantification, FAIR, Monte Carlo simulation, and calibrated estimation.">
-  <meta name="twitter:image" content="https://riskbydesign.net/assets/og-image.png">
 
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .holding {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      gap: 28px;
+    }
+    .holding .brand-plate { margin-bottom: 12px; }
+    .holding h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
+    .holding p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .holding a { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 3px; }
+    .holding .footer-note {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-
-  <a class="skip-link" href="#posts">Skip to content</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/">
-        <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
-      </a>
-
-      <nav class="site-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/lab/">The Lab</a></li>
-          <li><a href="/blog/">Writing</a></li>
-          <li><a class="nav-contact" href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="posts" class="section">
-      <div class="container container-narrow">
-        <p class="eyebrow reveal">Writing</p>
-        <h1 class="reveal">Notes on measuring risk</h1>
-        <p class="section-lede reveal">
-          Cyber risk quantification, FAIR, Monte Carlo simulation, and the humans
-          who feed the models.
-        </p>
-
-        <div class="post-list reveal">
-          <a class="card post-card" href="/blog/inside-forlas-crq.html">
-            <p class="post-meta">11 July 2026</p>
-            <h2>Inside FORLAS CRQ: a tour of quantified cyber risk</h2>
-            <p class="card-desc">
-              A walkthrough of the tool: Monte Carlo loss distributions, exceedance
-              curves, sensitivity analysis, tolerance metrics, and portfolio
-              aggregation. The depth of an enterprise CRQ platform, free and offline.
-            </p>
-            <span class="post-readmore">Read article</span>
-          </a>
-          <a class="card post-card" href="/blog/forlas-crq-v0-2-0.html">
-            <p class="post-meta">11 July 2026</p>
-            <h2>FORLAS CRQ v0.2.0: show your working</h2>
-            <p class="card-desc">
-              A new Analysis and Evidence area puts the reasoning beside the numbers,
-              plus segregation of duties on approvals, customisable layouts, and a
-              scenario type picker.
-            </p>
-            <span class="post-readmore">Read article</span>
-          </a>
-          <a class="card post-card" href="/blog/cyber-risk-language-problem.html">
-            <p class="post-meta">10 July 2026</p>
-            <h2>Cyber risk has a language problem</h2>
-            <p class="card-desc">
-              Boards can't budget against colours. How FAIR and Monte Carlo simulation
-              replace "high, medium, low" with dollar figures, and why that tooling
-              should be free.
-            </p>
-            <span class="post-readmore">Read article</span>
-          </a>
-        </div>
-      </div>
-    </section>
+  <main class="holding">
+    <span class="brand-plate"><img class="brand-logo" src="/assets/riskbydesign-logo.png" alt="RiskByDesign" width="132" height="72"></span>
+    <h1>Temporarily offline</h1>
+    <p>
+      RiskByDesign is briefly paused while a few things are finalised behind the
+      scenes. Content will be back shortly.
+    </p>
+    <p>
+      Need to get in touch in the meantime? Email
+      <a href="mailto:cyber@riskbydesign.net">cyber@riskbydesign.net</a>.
+    </p>
+    <p class="footer-note">&copy; <span id="year">2026</span> RiskByDesign</p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> RiskByDesign &middot; All rights reserved.</p>
-      <p class="footer-note">Built by hand. No trackers, no analytics, no cookies.</p>
-    </div>
-  </footer>
-
-  <script src="/js/main.js"></script>
+  <script>
+    var y = document.getElementById('year');
+    if (y) y.textContent = String(new Date().getFullYear());
+  </script>
 </body>
 </html>
