@@ -13,5 +13,5 @@ bowcrq/           Hidden (noindex) BowCRQ policy documents used for the
 css/style.css     All styling (design tokens at the top in :root)
 js/main.js        Mobile nav, scroll reveal, footer year
 tools/            One-off regenerators (BowCRQ doc pages from source .md)
-assets/           Logo, headshot, favicon, product screenshots
+assets/           Logo, favicon, product screenshots
 ```
