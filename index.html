@@ -1,14 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RiskByDesign</title>
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="RiskByDesign is building apps for everyday life on the spectrum.">
   <meta name="theme-color" content="#212428">
+  <meta property="og:title" content="RiskByDesign">
+  <meta property="og:description" content="Building apps for everyday life on the spectrum.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://riskbydesign.net/">
+  <link rel="canonical" href="https://riskbydesign.net/">
   <style>
-    html, body { margin: 0; padding: 0; background: #212428; min-height: 100vh; }
+    :root {
+      --bg: #212428;
+      --fg: #e8e9eb;
+      --muted: #9aa0a6;
+      --accent: #7fb3ff;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+    .card {
+      max-width: 36rem;
+      width: 100%;
+    }
+    .brand {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    h1 {
+      font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--fg);
+      margin: 0 0 1rem;
+    }
+    p.muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .card { animation: fade 600ms ease-out both; }
+      @keyframes fade {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: none; }
+      }
+    }
   </style>
 </head>
-<body></body>
+<body>
+  <main>
+    <div class="card">
+      <p class="brand">RiskByDesign</p>
+      <h1>Building for everyday life on the spectrum.</h1>
+      <p>RiskByDesign builds apps that make day-to-day life a little easier for autistic people.</p>
+      <p class="muted">More to come.</p>
+    </div>
+  </main>
+  <footer>&copy; RiskByDesign</footer>
+</body>
 </html>
